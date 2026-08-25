@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  vllm-proxy:
+    build: .
+    container_name: n8n-vllm-proxy
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      - VLLM_BACKEND_URL=https://aftab1337--qwen25-32b-awq-multi-serve.modal.run/
+      - DEFAULT_MODEL=Qwen/Qwen2.5-32B-Instruct-AWQ
+      - OVERRIDE_MODEL=Qwen/Qwen2.5-32B-Instruct-AWQ
+      - VLLM_API_KEY=not-needed   # Uncomment if needed
+      - LOG_LEVEL=INFO
+    networks:
+      - n8n-network
+
+networks:
+  n8n-network:
+    name: n8n-network
+    external: true  # Join existing n8n Docker network, or set to false if creating new
