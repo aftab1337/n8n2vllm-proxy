@@ -1,5 +1,7 @@
+
 # n8n to vLLM Translation Proxy
 
+<img alt="banner" src="https://pub-b9fa51f46c3d462eb41dfcb96bb4e9b7.r2.dev/git/banner.jpeg" width="720">
 A high-performance, asynchronous translation proxy built with FastAPI and `httpx`. It bridges n8n's built-in Instance AI sidebar (powered by Vercel AI SDK) with standard OpenAI-compatible LLM servers like vLLM, Ollama, Aphrodite, or LocalAI.
 
 ---
